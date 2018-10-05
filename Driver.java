@@ -23,7 +23,25 @@ public class Driver{
     amara.withdraw(20000.01); // FALSE
     System.out.println("Her new balance is " + amara.getBalance() + "."); // should stay the same
 
+/*
     // TO STRING
     System.out.println(amara.toString((amara.getBalance()), (amara.getAccountID()))); // not sure how this should work
+*/
+
+    /*
+    ADDITONAL METHODS
+    */
+
+    // MAKE SURE EVERYTHING IS WORKING
+    BankAccount richerAmara = new BankAccount(99999.01, 12345, "ilovemoney");
+    System.out.println(richerAmara);
+    System.out.println("Her balance is " + richerAmara.getBalance() + ".");
+    System.out.println("Her accountID is " + richerAmara.getAccountID() + ".");
+    System.out.println("Her password is " + richerAmara.getPassword() + ".");
+    richerAmara.transferTo(amara, 100, "passwordssuck");
+    System.out.println("Her balance is " + richerAmara.getBalance() + ".");
+    richerAmara.transferTo(amara, 1000000, "passwordsaregood");
+    System.out.println("Her balance is " + richerAmara.getBalance() + ".");
+
   }
 }

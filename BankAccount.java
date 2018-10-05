@@ -31,8 +31,8 @@ public class BankAccount{
   }
 
 //returns tabbed values
-  public String toString(double a, double b){
-    return "" + a + "\t" + b;
+  public String toString(){
+    return "" + accountID + "\t $" + balance;
   }
 
 //deposit money
@@ -51,4 +51,15 @@ public class BankAccount{
     return money <= balance;
   }
 
+//additional methods
+/*This private method will allow internal methods to check the password easily*/
+  private boolean authenticate(String given){
+    return given.equals(password);
+  }
+
+/*Transfer money from this BankAccount to the other*/
+
+ public boolean transferTo(BankAccount other, double amount, String pass){
+   return (authenticate(password) && (this.withdraw(amount) && other.deposit(amount)));
+ }
 }
